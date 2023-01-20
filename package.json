@@ -1,0 +1,37 @@
+{
+  "name": "nextjs-mui-prisma-iron-session-stack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma-prototype-push": "prisma db push",
+    "prisma-migration-dev": "prisma migrate dev",
+    "prisma-migration-deploy": "prisma migrate deploy"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@next/font": "latest",
+    "@prisma/client": "^4.9.0",
+    "iron-session": "^6.3.1",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "swr": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "prisma": "^4.9.0",
+    "typescript": "latest"
+  }
+}

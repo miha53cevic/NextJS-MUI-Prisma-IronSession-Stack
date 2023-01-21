@@ -5,7 +5,7 @@ Includes [NextJS-API-Decorators](https://next-api-decorators.vercel.app/) for ea
 Download [Postgres](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 Default user is postgres and default db is postgres with user defined master password, remember these!
 
-Open [.env.development](./.env.development) and fill out the missing parts.  
+Open [.env](./.env) and fill out the missing parts.  
 ```[user]:[password]@localhost:5432/[dbName]?schema=[schemaName]```
 
 ```bash

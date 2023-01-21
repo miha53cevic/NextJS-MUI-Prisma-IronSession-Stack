@@ -1,20 +1,30 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { Body, createHandler, Post, UnauthorizedException, ValidationPipe, Req } from 'next-api-decorators';
+import { IsNotEmpty } from 'class-validator';
+import type { NextApiRequest } from "next";
+
 import withSessionRoute from "../../lib/withSessionRoute";
 import { prisma } from "../../server/db";
 
-export default withSessionRoute(loginRoute);
-
-async function loginRoute(req: NextApiRequest, res: NextApiResponse) {
-    // get user from database then:
-    const user = await prisma.user.findFirst({
-        where: {
-            name: req.body.name,
-        }
-    });
-
-    if (!user) return res.status(400).json('Ne postoji taj name!');
-
-    req.session.user = user;
-    await req.session.save();
-    res.send({ ok: true });
+class LoginDTO {
+    @IsNotEmpty()
+    name!: string;
 }
+
+class LoginController {
+    @Post()
+    public async login(@Req() req: NextApiRequest, @Body(ValidationPipe) dto: LoginDTO) {
+        const user = await prisma.user.findFirst({
+            where: {
+                name: dto.name,
+            }
+        });
+
+        if (!user) throw new UnauthorizedException();
+
+        req.session.user = user;
+        await req.session.save();
+        return "OK";
+    }
+}
+
+export default withSessionRoute(createHandler(LoginController));

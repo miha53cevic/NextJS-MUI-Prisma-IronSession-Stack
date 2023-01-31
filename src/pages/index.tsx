@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import { Paper, Stack } from '@mui/material';
+import { Paper, Stack, Container, Typography } from '@mui/material';
 import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward';
 
 export default function Home() {

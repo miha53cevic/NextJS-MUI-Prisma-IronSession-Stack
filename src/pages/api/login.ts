@@ -1,13 +1,16 @@
 import { Body, createHandler, Post, UnauthorizedException, ValidationPipe, Req } from 'next-api-decorators';
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsEmail } from 'class-validator';
 import type { NextApiRequest } from "next";
 
 import withSessionRoute from "../../lib/withSessionRoute";
 import { prisma } from "../../server/db";
 
 class LoginDTO {
+    @IsEmail()
+    email!: string;
+
     @IsNotEmpty()
-    name!: string;
+    password!: string;
 }
 
 class LoginController {
@@ -15,7 +18,8 @@ class LoginController {
     public async login(@Req() req: NextApiRequest, @Body(ValidationPipe) dto: LoginDTO) {
         const user = await prisma.user.findFirst({
             where: {
-                name: dto.name,
+                email: dto.email,
+                password: dto.password,
             }
         });
 

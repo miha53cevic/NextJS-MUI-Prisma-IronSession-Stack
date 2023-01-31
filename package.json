@@ -9,32 +9,35 @@
     "lint": "next lint",
     "prisma-prototype-push": "prisma db push",
     "prisma-migration-dev": "prisma migrate dev",
+    "prisma-generate": "prisma generate",
     "prisma-migration-deploy": "prisma migrate deploy"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "latest",
-    "@mui/material": "latest",
-    "@next/font": "latest",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.7",
+    "@next/font": "^13.1.6",
     "@prisma/client": "^4.9.0",
+    "axios": "^1.2.6",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "iron-session": "^6.3.1",
-    "next": "latest",
+    "next": "^13.1.6",
     "next-api-decorators": "^2.0.1",
-    "react": "latest",
-    "react-dom": "latest",
-    "swr": "^2.0.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.0",
+    "swr": "^2.0.3"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "eslint": "^8.33.0",
+    "eslint-config-next": "^13.1.6",
     "prisma": "^4.9.0",
-    "typescript": "latest"
+    "typescript": "^4.9.5"
   }
 }

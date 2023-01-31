@@ -20,6 +20,9 @@ class LoginController {
             where: {
                 email: dto.email,
                 password: dto.password,
+            },
+            include: {
+                profile: true,
             }
         });
 
@@ -27,7 +30,7 @@ class LoginController {
 
         req.session.user = user;
         await req.session.save();
-        return "OK";
+        return { message: 'OK' };
     }
 }
 

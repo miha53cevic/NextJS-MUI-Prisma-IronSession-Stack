@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Paper, Stack, Container, Typography } from '@mui/material';
+import { Paper, Stack, Container, Typography, Grid } from '@mui/material';
 import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward';
+
+import { RegisterForm, LoginForm } from '../features/Forms';
 
 export default function Home() {
     return (
@@ -9,7 +11,8 @@ export default function Home() {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '100vh'
+            minHeight: '100vh',
+            gap: '2rem'
         }}>
             <Paper sx={{ padding: '2rem' }}>
                 <Stack direction='column' alignItems='center' spacing='1rem'>
@@ -19,6 +22,14 @@ export default function Home() {
                     <AccessibleForwardIcon fontSize='large' />
                 </Stack>
             </Paper>
+            <Grid container spacing='2rem'>
+                <Grid item xs={12} md={6}>
+                    <RegisterForm />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <LoginForm />
+                </Grid>
+            </Grid>
         </Container>
     );
 }

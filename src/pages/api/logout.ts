@@ -9,7 +9,7 @@ class LogoutController {
         if (!req.session.user) throw new UnauthorizedException('User not logged in!');
 
         req.session.destroy();
-        return "OK";
+        return { message: 'OK' };
     }
 }
 
